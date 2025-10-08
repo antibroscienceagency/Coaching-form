@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health, Nutrition & Training Coaching Application</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f2ff; /* Light purple background */
+        }
+        .form-container {
+            background-color: white;
+            border-radius: 12px;
+            padding: 2rem 2.5rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .form-section {
+            border-left: 4px solid #8B5CF6; /* Purple accent */
+            padding-left: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .form-question {
+            margin-bottom: 1.5rem;
+        }
+        .label-text {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #111827;
+        }
+        .label-text .optional {
+            font-weight: 400;
+            color: #6B7280;
+        }
+         .label-text .required-star {
+            color: #EF4444;
+            margin-left: 2px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #D1D5DB;
+            border-radius: 8px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #8B5CF6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+        }
+        .radio-label, .checkbox-label {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            cursor: pointer;
+        }
+        .radio-input, .checkbox-input {
+            margin-right: 0.75rem;
+            height: 1.1rem;
+            width: 1.1rem;
+            accent-color: #8B5CF6;
+        }
+        .linear-scale-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+        .linear-scale-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #4B5563;
+            font-size: 0.9rem;
+        }
+        .linear-scale-item input {
+            margin-bottom: 0.25rem;
+        }
+        .submit-button {
+            width: 100%;
+            padding: 1rem;
+            background-color: #8B5CF6;
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .submit-button:hover {
+            background-color: #7C3AED;
+        }
+        .form-header {
+             border-bottom: 1px solid #e5e7eb;
+             padding-bottom: 1.5rem;
+             margin-bottom: 2rem;
+        }
+        .form-header h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #111827;
+        }
+         .form-header p {
+            font-size: 1rem;
+            color: #4B5563;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <div class="form-header">
+            <h1>Health, Nutrition & Training Coaching Application</h1>
+            <p>Please fill out this form to the best of your ability. This information will help create a personalized coaching plan for you.</p>
+        </div>
+
+        <!-- IMPORTANT: The form will now send submissions to your email. -->
+        <form action="https://formspree.io/f/antibroscienceagency@gmail.com" method="POST" enctype="multipart/form-data">
+            
+            <!-- SECTION 1 — Basic Info -->
+            <div class="form-section">
+                <h2 class="text-xl font-bold mb-2 text-gray-800">Section 1: Basic Info</h2>
+                <p class="text-gray-600 mb-6">Let's start with the basics to get to know you.</p>
+                <div class="form-question">
+                    <label class="label-text" for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="Full Name" class="input-field" placeholder="John Doe">
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="age">Age</label>
+                    <input type="number" id="age" name="Age" class="input-field" placeholder="25">
+                </div>
+                <div class="form-question">
+                    <label class="label-text">Gender</label>
+                    <label class="radio-label"><input type="radio" name="Gender" value="Male" class="radio-input"> Male</label>
+                    <label class="radio-label"><input type="radio" name="Gender" value="Female" class="radio-input"> Female</label>
+                    <label class="radio-label"><input type="radio" name="Gender" value="Other / Prefer not to say" class="radio-input"> Other / Prefer not to say</label>
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="location">City / Country (for time zone)</label>
+                    <input type="text" id="location" name="City / Country" class="input-field" placeholder="e.g., London, UK">
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="contact">Instagram Handle or Email<span class="required-star">*</span></label>
+                    <input type="text" id="contact" name="Contact" class="input-field" placeholder="@yourhandle or you@example.com" required>
+                </div>
+            </div>
+
+            <!-- SECTION 2 — Current Physical Profile -->
+            <div class="form-section">
+                <h2 class="text-xl font-bold mb-2 text-gray-800">Section 2: Current Physical Profile</h2>
+                <p class="text-gray-600 mb-6">This helps establish a baseline for your coaching.</p>
+                <div class="form-question">
+                    <label class="label-text" for="height">Height (cm)</label>
+                    <input type="number" id="height" name="Height (cm)" class="input-field" placeholder="180">
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="weight">Weight (kg)</label>
+                    <input type="number" step="0.1" id="weight" name="Weight (kg)" class="input-field" placeholder="75.5">
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="bodyfat">Estimated body fat % <span class="optional">(optional)</span></label>
+                    <input type="text" id="bodyfat" name="Estimated Body Fat" class="input-field" placeholder="e.g., 15% or 'visible abs'">
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="injuries">Do you have any medical conditions or injuries?</label>
+                    <input type="text" id="injuries" name="Medical Conditions / Injuries" class="input-field" placeholder="e.g., Lower back pain, knee issues">
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="meds">Are you currently taking any medication or supplements? <span class="optional">(optional)</span></label>
+                    <input type="text" id="meds" name="Medication / Supplements" class="input-field" placeholder="e.g., Vitamin D, Creatine">
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="health-problems">Any health problems you are going through right now or something that has affected your fitness journey in the past? <span class="optional">(optional)</span></label>
+                    <textarea id="health-problems" name="Past Health Problems" rows="4" class="input-field"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 3 — Goals -->
+            <div class="form-section">
+                <h2 class="text-xl font-bold mb-2 text-gray-800">Section 3: Goals</h2>
+                <p class="text-gray-600 mb-6">Understanding what you want to achieve is key.</p>
+                <div class="form-question">
+                    <label class="label-text">What’s your primary goal right now?</label>
+                    <label class="radio-label"><input type="radio" name="Primary Goal" value="Fat loss" class="radio-input"> Fat loss</label>
+                    <label class="radio-label"><input type="radio" name="Primary Goal" value="Muscle gain" class="radio-input"> Muscle gain</label>
+                    <label class="radio-label"><input type="radio" name="Primary Goal" value="Strength improvement" class="radio-input"> Strength improvement</label>
+                    <label class="radio-label"><input type="radio" name="Primary Goal" value="Recomposition" class="radio-input"> Recomposition</label>
+                    <label class="radio-label"><input type="radio" name="Primary Goal" value="General health / lifestyle improvement" class="radio-input"> General health / lifestyle improvement</label>
+                    <label class="radio-label"><input type="radio" name="Primary Goal" value="Injury recovery" class="radio-input"> Injury recovery</label>
+                </div>
+                 <div class="form-question">
+                    <label class="label-text" for="secondary-goal">What’s your secondary goal? <span class="optional">(optional)</span></label>
+                    <input type="text" id="secondary-goal" name="Secondary Goal" class="input-field" placeholder="e.g., Improve posture, run a 5k">
+                </div>
+                <div class="form-question">
+                    <label class="label-text">In what timeframe are you aiming to see visible changes?</label>
+                    <label class="radio-label"><input type="radio" name="Timeframe" value="1-2 months" class="radio-input"> 1–2 months</label>
+                    <label class="radio-label"><input type="radio" name="Timeframe" value="3-6 months" class="radio-input"> 3–6 months</label>
+                    <label class="radio-label"><input type="radio" name="Timeframe" value="6+ months" class="radio-input"> 6+ months</label>
+                </div>
+            </div>
+
+            <!-- SECTION 4 — Training Background -->
+            <div class="form-section">
+                 <h2 class="text-xl font-bold mb-2 text-gray-800">Section 4: Training Background</h2>
+                 <p class="text-gray-600 mb-6">Let's talk about your experience and environment.</p>
+                 <div class="form-question">
+                    <label class="label-text">How long have you been training consistently?</label>
+                    <label class="radio-label"><input type="radio" name="Training Experience" value="Not started yet" class="radio-input"> Not started yet</label>
+                    <label class="radio-label"><input type="radio" name="Training Experience" value="<6 months" class="radio-input"> &lt;6 months</label>
+                    <label class="radio-label"><input type="radio" name="Training Experience" value="6-12 months" class="radio-input"> 6–12 months</label>
+                    <label class="radio-label"><input type="radio" name="Training Experience" value="1-3 years" class="radio-input"> 1–3 years</label>
+                    <label class="radio-label"><input type="radio" name="Training Experience" value="3+ years" class="radio-input"> 3+ years</label>
+                 </div>
+                 <div class="form-question">
+                    <label class="label-text" for="training-days">How many days per week do you currently train?</label>
+                    <input type="number" id="training-days" name="Training Days per Week" class="input-field" placeholder="3">
+                 </div>
+                 <div class="form-question">
+                    <label class="label-text">Where do you train?</label>
+                    <label class="radio-label"><input type="radio" name="Training Location" value="Gym" class="radio-input"> Gym</label>
+                    <label class="radio-label"><input type="radio" name="Training Location" value="Home" class="radio-input"> Home</label>
+                    <label class="radio-label"><input type="radio" name="Training Location" value="Outdoor / Calisthenics park" class="radio-input"> Outdoor / Calisthenics park</label>
+                 </div>
+                 <div class="form-question">
+                    <label class="label-text">What type of training do you currently follow (if any)?</label>
+                    <label class="checkbox-label"><input type="checkbox" name="Training Type[]" value="Weight training" class="checkbox-input"> Weight training</label>
+                    <label class="checkbox-label"><input type="checkbox" name="Training Type[]" value="Calisthenics" class="checkbox-input"> Calisthenics</label>
+                    <label class="checkbox-label"><input type="checkbox" name="Training Type[]" value="Cardio only" class="checkbox-input"> Cardio only</label>
+                    <label class="checkbox-label"><input type="checkbox" name="Training Type[]" value="Sports-based" class="checkbox-input"> Sports-based</label>
+                    <label class="checkbox-label"><input type="checkbox" name="Training Type[]" value="None currently" class="checkbox-input"> None currently</label>
+                 </div>
+            </div>
+
+            <!-- SECTION 5 — Nutrition & Lifestyle -->
+            <div class="form-section">
+                <h2 class="text-xl font-bold mb-2 text-gray-800">Section 5: Nutrition & Lifestyle</h2>
+                <p class="text-gray-600 mb-6">Your habits outside of training are just as important.</p>
+                <div class="form-question">
+                    <label class="label-text" for="meals-per-day">How many meals do you eat per day?</label>
+                    <input type="number" id="meals-per-day" name="Meals per Day" class="input-field" placeholder="4">
+                </div>
+                <div class="form-question">
+                    <label class="label-text">How’s your diet right now?</label>
+                    <label class="radio-label"><input type="radio" name="Diet Quality" value="Very clean" class="radio-input"> Very clean</label>
+                    <label class="radio-label"><input type="radio" name="Diet Quality" value="Moderately clean" class="radio-input"> Moderately clean</label>
+                    <label class="radio-label"><input type="radio" name="Diet Quality" value="Junk-heavy" class="radio-input"> Junk-heavy</label>
+                </div>
+                <div class="form-question">
+                    <label class="label-text">Do you track calories or macros?</label>
+                    <label class="radio-label"><input type="radio" name="Tracking" value="Yes" class="radio-input"> Yes</label>
+                    <label class="radio-label"><input type="radio" name="Tracking" value="Sometimes" class="radio-input"> Sometimes</label>
+                    <label class="radio-label"><input type="radio" name="Tracking" value="No" class="radio-input"> No</label>
+                </div>
+                <div class="form-question">
+                    <label class="label-text">Food preference:</label>
+                    <label class="radio-label"><input type="radio" name="Food Preference" value="Vegetarian" class="radio-input"> Vegetarian</label>
+                    <label class="radio-label"><input type="radio" name="Food Preference" value="Non-vegetarian" class="radio-input"> Non-vegetarian</label>
+                    <label class="radio-label"><input type="radio" name="Food Preference" value="Eggetarian" class="radio-input"> Eggetarian</label>
+                    <label class="radio-label"><input type="radio" name="Food Preference" value="Vegan" class="radio-input"> Vegan</label>
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="allergies">Any food intolerances or allergies?</label>
+                    <input type="text" id="allergies" name="Allergies" class="input-field" placeholder="e.g., Lactose intolerant, peanut allergy">
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="sleep">Average sleep duration (in hours)?</label>
+                    <input type="number" step="0.5" id="sleep" name="Sleep Duration" class="input-field" placeholder="7.5">
+                </div>
+                <div class="form-question">
+                    <label class="label-text">Stress level (1 = minimal, 10 = extremely high)?</label>
+                    <div class="linear-scale-container">
+                        <span class="text-sm text-gray-500">Minimal</span>
+                        <div class="flex space-x-2 sm:space-x-4">
+                            <label class="linear-scale-item">1<input type="radio" name="Stress Level" value="1" class="radio-input"></label>
+                            <label class="linear-scale-item">2<input type="radio" name="Stress Level" value="2" class="radio-input"></label>
+                            <label class="linear-scale-item">3<input type="radio" name="Stress Level" value="3" class="radio-input"></label>
+                            <label class="linear-scale-item">4<input type="radio" name="Stress Level" value="4" class="radio-input"></label>
+                            <label class="linear-scale-item">5<input type="radio" name="Stress Level" value="5" class="radio-input"></label>
+                            <label class="linear-scale-item">6<input type="radio" name="Stress Level" value="6" class="radio-input"></label>
+                            <label class="linear-scale-item">7<input type="radio" name="Stress Level" value="7" class="radio-input"></label>
+                            <label class="linear-scale-item">8<input type="radio" name="Stress Level" value="8" class="radio-input"></label>
+                            <label class="linear-scale-item">9<input type="radio" name="Stress Level" value="9" class="radio-input"></label>
+                            <label class="linear-scale-item">10<input type="radio" name="Stress Level" value="10" class="radio-input"></label>
+                        </div>
+                        <span class="text-sm text-gray-500">Extremely High</span>
+                    </div>
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="occupation">Occupation / Study status (to gauge activity level)</label>
+                    <input type="text" id="occupation" name="Occupation" class="input-field" placeholder="e.g., Office job, Student, Construction worker">
+                </div>
+            </div>
+
+            <!-- SECTION 6 — Health Monitoring -->
+            <div class="form-section">
+                <h2 class="text-xl font-bold mb-2 text-gray-800">Section 6: Health Monitoring <span class="text-lg font-normal text-gray-500">(Optional)</span></h2>
+                <p class="text-gray-600 mb-6">This is advanced screening for serious clients.</p>
+                <div class="form-question">
+                    <label class="label-text">Do you regularly measure your blood markers (like FBS, HbA1c, Testosterone, Lipidogram, etc.)?</label>
+                    <label class="radio-label"><input type="radio" name="Blood Markers" value="Yes, regularly" class="radio-input" onclick="toggleBloodMarkerDetails(true)"> Yes, regularly</label>
+                    <label class="radio-label"><input type="radio" name="Blood Markers" value="Occasionally" class="radio-input" onclick="toggleBloodMarkerDetails(true)"> Occasionally</label>
+                    <label class="radio-label"><input type="radio" name="Blood Markers" value="Never" class="radio-input" onclick="toggleBloodMarkerDetails(false)"> Never</label>
+                </div>
+                <div class="form-question" id="blood-marker-details" style="display: none;">
+                    <label class="label-text" for="blood-marker-values">If yes, please share any recent relevant values or summaries (optional)</label>
+                    <textarea id="blood-marker-values" name="Blood Marker Values" rows="4" class="input-field"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 7 — Commitment & Mindset -->
+            <div class="form-section">
+                <h2 class="text-xl font-bold mb-2 text-gray-800">Section 7: Commitment & Mindset</h2>
+                <p class="text-gray-600 mb-6">Let's check if we're on the same page.</p>
+                <div class="form-question">
+                    <label class="label-text">How committed are you to this process (1 = not committed, 10 = all in)?</label>
+                     <div class="linear-scale-container">
+                        <span class="text-sm text-gray-500">Not Committed</span>
+                         <div class="flex space-x-2 sm:space-x-4">
+                            <label class="linear-scale-item">1<input type="radio" name="Commitment Level" value="1" class="radio-input"></label>
+                            <label class="linear-scale-item">2<input type="radio" name="Commitment Level" value="2" class="radio-input"></label>
+                            <label class="linear-scale-item">3<input type="radio" name="Commitment Level" value="3" class="radio-input"></label>
+                            <label class="linear-scale-item">4<input type="radio" name="Commitment Level" value="4" class="radio-input"></label>
+                            <label class="linear-scale-item">5<input type="radio" name="Commitment Level" value="5" class="radio-input"></label>
+                            <label class="linear-scale-item">6<input type="radio" name="Commitment Level" value="6" class="radio-input"></label>
+                            <label class="linear-scale-item">7<input type="radio" name="Commitment Level" value="7" class="radio-input"></label>
+                            <label class="linear-scale-item">8<input type="radio" name="Commitment Level" value="8" class="radio-input"></label>
+                            <label class="linear-scale-item">9<input type="radio" name="Commitment Level" value="9" class="radio-input"></label>
+                            <label class="linear-scale-item">10<input type="radio" name="Commitment Level" value="10" class="radio-input"></label>
+                        </div>
+                        <span class="text-sm text-gray-500">All In</span>
+                    </div>
+                </div>
+                <div class="form-question">
+                    <label class="label-text" for="expectations">What are your expectations from this coaching?</label>
+                    <textarea id="expectations" name="Expectations" rows="4" class="input-field"></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 8 — Optional Media Upload -->
+            <div class="form-section">
+                <h2 class="text-xl font-bold mb-2 text-gray-800">Section 8: Optional Media Upload</h2>
+                <p class="text-gray-600 mb-6">A picture helps track progress and personalize your plan.</p>
+                <div class="form-question">
+                    <label class="label-text" for="photo-upload">Upload your current full-body photo (optional)</label>
+                    <input type="file" id="photo-upload" name="Photo Upload" class="input-field" accept="image/*">
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Submit Application</button>
+
+        </form>
+    </div>
+
+    <script>
+        function toggleBloodMarkerDetails(show) {
+            const detailsSection = document.getElementById('blood-marker-details');
+            if (show) {
+                detailsSection.style.display = 'block';
+            } else {
+                detailsSection.style.display = 'none';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
